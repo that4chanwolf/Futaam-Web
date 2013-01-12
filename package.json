@@ -16,6 +16,7 @@
 	"dependencies": {
 		"express": ">0.0.1",
 		"pickle": ">0.0.1",
-		"argparser": ">0.0.1"
+		"argparser": ">0.0.1",
+		"ejs", ">0.0.1"
 	}
 }
