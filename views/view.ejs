@@ -47,7 +47,18 @@
 			<% if(typeof selected !== 'undefined') { %>
 				<img id="img"></img><h2><%= selected.name %></h2>
 				<p id="observations">Observations: <%= selected.obs %></p>
-
+				<span class="badge">Last watched episode: <%= selected.lastwatched %></span>
+				<% if(selected.status === 'c') { %>
+					<span class="label label-info">Currently watching</span>
+				<% } else if(selected.status === 'w') { %>
+					<span class="label label-success">Watched</span>
+				<% } else if(selected.status === 'h') { %> 
+					<span class="label label-warning">On hold</span>
+				<% } else if(selected.status === 'q') { %>
+					<span class="label">To watch</span>
+				<% } else if(selected.status === 'd') { %>
+					<span class="label label-important">Dropped</span>
+				<% } %>
 				<p id="description"></p>
 			<% } else { %>
 				<h1>Pick an anime</h1>
