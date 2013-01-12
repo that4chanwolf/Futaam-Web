@@ -1,0 +1,20 @@
+{
+	"name": "Futaam-Web",
+	"description": "Web interface for Futaam",
+	"version": "0.0.1",
+	"author": "that4chanwolf",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/that4chanwolf/Fuutam-Web.git"
+	},
+	"licenses": [
+		{
+			"type": "zlib",
+			"url": "https://github.com/that4chanwolf/Fuutam-Web/blob/master/LICENSE"
+		}
+	],
+	"dependencies": {
+		"express": ">0.0.1",
+		"pickle": ">0.0.1"
+	}
+}
