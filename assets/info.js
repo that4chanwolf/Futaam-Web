@@ -28,8 +28,15 @@ var set = function set(info, cb) {
 		if(info[i].title === $('div.hero-unit h2')[0].textContent) {
 			var img = $('div.hero-unit img')[0],
 			    des = $('div.hero-unit p#description')[0];
+			    
+			var synopsis = info[i].synopsis.replace(/<(.*?)>/gi, '');
+			
+			if(/\.{3}$/.test(synopsis)) {
+				synopsis += " <a href='http://myanimelist.net/anime/" + info[i].id + "' title='lolmal'>[READ MORE]</a>";
+			}
+			
 			img.src = info[i].image_url.replace(/t\.(jpg|png|gif)$/,'\.$1');
-			des.textContent = "Description: " + info[i].synopsis;
+			des.innerHTML = "Description: " + synopsis;
 			break;
 		}
 	}
