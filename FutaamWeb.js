@@ -27,7 +27,8 @@ app.configure(function configure() {
 app.get('/', function main(req, res) { // Main page
 	futaam.parse(db, function(data) {
 		res.render('view', {
-			name: data.name,
+			dbname: data.name,
+			dbdes: data.description,
 			list: data.items
 		});
 	});
@@ -36,7 +37,8 @@ app.get('/', function main(req, res) { // Main page
 app.get('/view', function main(req, res) { // Same as /
 	futaam.parse(db, function(data) {
 		res.render('view', {
-			name: data.name,
+			dbname: data.name,
+			dbdes: data.description,
 			list: data.items
 		});
 	});
@@ -49,7 +51,8 @@ app.get('/view/:animu', function(req, res) {
 				var citem = data.items[i];
 				res.render('view', {
 					selected: citem,
-					name: data.name,
+					dbname: data.name,
+					dbdes: data.description,
 					list: data.items
 				});
 				break;
@@ -63,7 +66,9 @@ app.get('/json', function jsonall(req, res) {
 		if(typeof data === 'object') {
 			res.json(data.items);
 		} else {
-			res.send('whoops');
+			res.status(500).json({
+				error: 'unknown error'
+			});
 		}
 	});
 });
@@ -78,7 +83,9 @@ app.get('/json/:animu', function jsonsingle(req, res) {
 				}
 			}
 		} else {
-			res.status(500).send('whoops');
+			res.status(500).json({
+				error: 'unknown error'
+			});			
 		}
 	});
 });
