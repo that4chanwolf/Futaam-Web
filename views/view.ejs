@@ -45,7 +45,7 @@
 	<div class="span9">
 		<div class="hero-unit">
 			<% if(typeof selected !== 'undefined') { %>
-				<img id="img"></img><h2><%= selected.name %></h2>
+				<img id="img" /><h2><%= selected.name %></h2>
 				<p id="observations">Observations: <%= selected.obs %></p>
 				<span class="badge">Last watched episode: <%= selected.lastwatched %></span>
 				<% if(selected.status === 'c') { %>
