@@ -10,10 +10,6 @@
 			margin-left:auto;
 			margin-right:auto;
 		}
-		div.hero-unit img {
-			page-break-after: avoid;
-			page-break-before: avoid;
-		}
 	</style>
 	<script src="/assets/info.js" type="text/javascript"></script>
 </head>
@@ -45,7 +41,14 @@
 	<div class="span9">
 		<div class="hero-unit">
 			<% if(typeof selected !== 'undefined') { %>
-				<img id="img" /><h2><%= selected.name %></h2>
+				<div class="row-fluit">
+					<div class="span4">
+						<img id="img"></img>
+					</div>
+					<div class="span8">
+						<h2><%= selected.name %></h2>
+					</div>
+				</div>
 				<p id="observations">Observations: <%= selected.obs %></p>
 				<span class="badge">Last watched episode: <%= selected.lastwatched %></span>
 				<% if(selected.status === 'c') { %>
@@ -60,6 +63,7 @@
 					<span class="label label-important">Dropped</span>
 				<% } %>
 				<p id="description"></p>
+				<br />
 			<% } else { %>
 				<h1>Pick an anime</h1>
 			<% } %>
