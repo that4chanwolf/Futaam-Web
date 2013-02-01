@@ -30,9 +30,9 @@
 				<li class="nav-header">Animu</li>
 				<% list.forEach(function(item) { %>
 					<% if(typeof selected !== 'undefined' && item === selected) { %>
-						<li class="active"><a href="/view/<%=item.name %>"><%= item.name %></a></li>
+						<li class="active"><a href="/view/<%= encodeURIComponent(item.name) %>"><%= item.name %></a></li>
 					<% } else { %>
-						<li><a href="/view/<%=item.name %>"><%= item.name %></a></li>					
+						<li><a href="/view/<%= encodeURIComponent(item.name) %>"><%= item.name %></a></li>					
 					<% } %>
 				<% }) %>
 			</ul>
