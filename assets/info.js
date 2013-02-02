@@ -1,9 +1,3 @@
-var $ = function(selector, root) {
-	if(root == null) {
-		root = document.body;
-	}
-	return Array.prototype.slice.call(root.querySelectorAll(selector));
-};
 var get = function get(name, cb) {
 	var xhr = XMLHttpRequest(),
 	res;

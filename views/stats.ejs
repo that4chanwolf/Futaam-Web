@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Futaam - Putting the dick back in anime managers</title>
+	<link href="/assets/bootstrap.css" rel="stylesheet" />
+	<style>
+		body {
+			padding-top: 55px;
+			width: 1200px;
+			margin-left:auto;
+			margin-right:auto;
+		}
+	</style>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="/">Futaam</a>
+			<ul class="nav">
+				<li><a href="/view">View</a></li>
+				<li class="active"><a href="/stats">Stats</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="row-fluid">
+	<div class="span12">
+		<div class="hero-unit">
+			<h2>Name: <%= name %></h2>
+			<h3>Description: <%= des %></h3>
+			<h4>Count: <%= count %></h4>
+			<span>Show Status:</span>
+			<div class="progress" style="width: 85%; margin-left: auto; margin-right: auto;">
+				<div id="tool" class="bar bar-success" style="width: <%= ratios['w'] %>" title="Watched: <%= numbers['w'] %>"></div>
+				<div id="tool" class="bar bar" style="width: <%= ratios['c'] %>" title="Currently Watching: <%= numbers['c'] %>"></div>
+				<div id="tool" class="bar bar-warning" style="width: <%= ratios['h'] %>" title="On Hold: <%= numbers['h'] %>"></div>
+				<div id="tool" class="bar bar-danger" style="width: <%= ratios['d'] %>" title="Dropped: <%= numbers['d'] %>"></div>
+				<div id="tool" class="bar bar-grey" style="width: <%= ratios['q'] %>" title="Queued: <%= numbers['q'] %>"></div>
+			</div>
+			<h4>Number of times DB was accessed: <%= hits %></h4>
+		</div>
+	</div>
+</div>
+
+<script src="/assets/jquery.js" type="text/javascript"></script>
+<script src="/assets/bootstrap.min.js" type="text/javascript"></script>
+<script src="/assets/bootstrap-tooltip.js" type="text/javascript"></script>
+<script src="/assets/info.js" type="text/javascript"></script>
+<script>
+$(function() {
+	$('div#tool').tooltip();
+});
+</script>
+
+</body>
+</html>
