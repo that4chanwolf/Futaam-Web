@@ -52,7 +52,9 @@
 						<h2><%= selected.name %></h2>
 					</div>
 				</div>
+				<% if(selected.obs !== 'null') { %> 
 				<p id="observations">Observations: <%= selected.obs %></p>
+				<% } %>
 				<span class="badge">Last watched episode: <%= selected.lastwatched %></span>
 				<% if(selected.status === 'c') { %>
 					<span class="label label-info">Currently watching</span>
